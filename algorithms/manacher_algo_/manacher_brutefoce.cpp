@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+string expand(string &s, int l, int r)
+{
+    int n = s.size();
+    while (l >= 0 and r < n and s[l] == s[r])
+    {
+        l--;
+        r++;
+    }
+    return s.substr(l + 1, r - l - 1);
+}
+
+int main()
+{
+    string s;
+    cin >> s;
+    int n = s.size();
+    string ans = "";
+
+    for (int i = 0; i < n; i++)
+    {
+
+        // expand for odd length palindrome
+        string p1 = expand(s, i, i);
+        if (p1.size() > ans.size())
+        {
+            ans = p1;
+        }
+
+        // expand for even length palindrome
+        string p2 = expand(s, i, i + 1);
+        if (p2.size() > ans.size())
+        {
+            ans = p2;
+        }
+    }
+
+    cout << "result: " << ans << endl;
+}

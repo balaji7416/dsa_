@@ -1,0 +1,1 @@
+isPrime[n] ? cout << "Prime" << endl : cout << "not prime" << endl;
