@@ -3,7 +3,7 @@ using namespace std;
 
 bool isValid(string s)
 {
-    stack<int> stk;
+    stack<char> stk;
     for (auto c : s)
     {
         if (c == '(' or c == '[' or c == '{')
